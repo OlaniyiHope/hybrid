@@ -1,0 +1,74 @@
+{
+  "footerlogo": "assets/img/footer-logo.png",
+  "footertext": "",
+  "footerbg": "assets/img/bg/footer.png",
+  "socialicon": [
+      {
+        "icon": "fa fa-facebook",
+        "url": "https://www.facebook.com/hybridhomesandproperties/"
+      },
+      {
+        "icon": "fa fa-twitter",
+        "url": "https://twitter.com/hybridhomesandproperties"
+      },
+      {
+        "icon": "fa fa-linkedin",
+        "url": "https://www.linkedin.com/company/codingeek/hybrid/"
+      }
+    ],
+  "copyrighttext": "  © Copyright Hybrid Homes - All Right Reserved <span></span></a>",
+  "popularserces": {
+    "title": "Contact",
+    "links": [
+      {
+        "title": "For Complaints and enquiries you can reach us on any of the numbers or visit our head office at:"
+     
+      },
+      {
+        "title": "75B Adeyemo Akapo, Omole Phase 1. Ikeja, Lagos state"
+     
+      },
+      {
+        "title": "Call us 09058590355 , +2349058590357 ,+2349058590356"
+       
+      },
+      {
+        "title": "clientservice@adronhomesproperties.com",
+        "url": "/property-details"
+      }
+    ]
+  },
+  "Homepress": {
+    "title": "About Us",
+    "links": [
+      {
+        "title": "We are daily driven to keep our promise of affordable housing products with a singular mission to exceed expectations."
+        
+      }
+     
+    ]
+  },
+  "quicklink": {
+    "title": "Quick Links",
+    "links": [
+      {
+        "title": "About Us",
+        "url": "/about"
+      },
+      {
+        "title": "Property",
+        "url": "/property"
+      },
+      {
+        "title": "Contact Us",
+        "url": "/contact"
+      },
+      {
+        "title": "Help center",
+        "url": "/info"
+      }
+    ]
+  }
+
+
+}

@@ -1,6 +1,4 @@
 import "./hotel.css";
-import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,12 +10,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
+import Navbar from "../../component/global-component/navbar";
 
 const Hotel = () => {
+  let publicUrl = process.env.PUBLIC_URL + "/";
+  let imagealt = "image";
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
@@ -25,10 +26,11 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  console.log(data);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const { dates, options } = useContext(SearchContext);
+  //const { dates, options } = useContext(SearchContext);
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
@@ -37,7 +39,7 @@ const Hotel = () => {
     return diffDays;
   }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  //const days = dayDifference(dates[0].endDate, dates[0].startDate);
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -66,87 +68,124 @@ const Hotel = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
+
       {loading ? (
         "loading"
       ) : (
-        <div className="hotelContainer">
-          {open && (
-            <div className="slider">
-              <FontAwesomeIcon
-                icon={faCircleXmark}
-                className="close"
-                onClick={() => setOpen(false)}
-              />
-              <FontAwesomeIcon
-                icon={faCircleArrowLeft}
-                className="arrow"
-                onClick={() => handleMove("l")}
-              />
-              <div className="sliderWrapper">
-                <img
-                  src={data.photos[slideNumber]}
-                  alt=""
-                  className="sliderImg"
-                />
-              </div>
-              <FontAwesomeIcon
-                icon={faCircleArrowRight}
-                className="arrow"
-                onClick={() => handleMove("r")}
-              />
-            </div>
-          )}
-          <div className="hotelWrapper">
-            <button className="bookNow">Reserve or Book Now!</button>
-            <h1 className="hotelTitle">{data.name}</h1>
-            <div className="hotelAddress">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span>{data.address}</span>
-            </div>
-            <span className="hotelDistance">
-              Excellent location – {data.distance}m from center
-            </span>
-            <span className="hotelPriceHighlight">
-              Book a stay over ${data.cheapestPrice} at this property and get a
-              free airport taxi
-            </span>
-            <div className="hotelImages">
-              {data.photos?.map((photo, i) => (
-                <div className="hotelImgWrapper" key={i}>
-                  <img
-                    onClick={() => handleOpen(i)}
-                    src={photo}
-                    alt=""
-                    className="hotelImg"
-                  />
+        <>
+          <div className="property-details-area" style={{ paddingTop: "0" }}>
+            <div className="bg-gray pd-top-100 pd-bottom-90">
+              <div className="container">
+                <h3>
+                  <span className="say">{data?.name}</span>
+                </h3>
+                <button className="hey">
+                  For Sale - N{data?.cheapestPrice}{" "}
+                </button>
+
+                <div className="hotelAddress">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <span>{data?.address}</span>
                 </div>
-              ))}
-            </div>
-            <div className="hotelDetails">
-              <div className="hotelDetailsTexts">
-                <h1 className="hotelTitle">{data.title}</h1>
-                <p className="hotelDesc">{data.desc}</p>
-              </div>
-              <div className="hotelDetailsPrice">
-                <h1>Perfect for a {days}-night stay!</h1>
-                <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
+                <span className="hotelDistance">
+                  Excellent location – {data?.distance}m from center
                 </span>
-                <h2>
-                  <b>${days * data.cheapestPrice * options.room}</b> ({days}{" "}
-                  nights)
-                </h2>
-                <button onClick={handleClick}>Reserve or Book Now!</button>
+                <div className="row ">
+                  <div className="col-xl-9 col-lg-8">
+                    {data && (
+                      <img
+                        src={data?.photos?.[0]}
+                        alt=""
+                        className="hotelImg"
+                      />
+                    )}
+
+                    <div className="hotelDetails">
+                      <div className="hotelDetailsTexts">
+                        <h1
+                          style={{
+                            fontSize: 20,
+                            fontWeight: 700,
+                            color: "black",
+                          }}
+                        >
+                          Description
+                        </h1>
+                        <h1 className="hot">{data?.detail}</h1>
+                        <h1
+                          style={{
+                            fontSize: 20,
+                            marginTop: 20,
+                            fontWeight: 700,
+                            color: "black",
+                          }}
+                        >
+                          Details
+                        </h1>
+                        <p className="hot">{data?.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-3 col-lg-4">
+                    <div className="widget widget-owner-info mt-lg-0 mt-5">
+                      <div className="owner-info text-center"></div>
+
+                      <div>
+                        <div className="contact">
+                          <h6>Contact Us</h6>
+                          <div className="rld-single-input">
+                            <input type="text" placeholder="Full Name" />
+                          </div>
+                          <div className="rld-single-input">
+                            <input type="text" placeholder="Email" />
+                          </div>
+                          <div className="rld-single-input">
+                            <input type="text" placeholder="Messages" />
+                          </div>
+                          <a className="btn btn-yellow" href="#">
+                            Send Messages
+                          </a>
+                        </div>
+                        <div className="contact-info">
+                          <h6 className="mb-3">Contact Info</h6>
+                          <div className="media">
+                            <div className="media-body">
+                              <p>Address</p>
+                              <span>Long Island, NY 11355, USA</span>
+                            </div>
+                          </div>
+                          <div className="media">
+                            <div className="media-left">
+                              <i className="fa fa-phone" />
+                            </div>
+                            <div className="media-body">
+                              <p>Phone</p>
+                              <span>+00 111 222 333</span>
+                            </div>
+                          </div>
+                          <div className="media mb-0">
+                            <div className="media-left">
+                              <i className="fa fa-envelope" />
+                            </div>
+                            <div className="media-body">
+                              <p>Email</p>
+                              <span>info@example.com</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
           <MailList />
           <Footer />
-        </div>
+        </>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}
     </div>
   );
 };

@@ -1,25 +1,34 @@
+import Navbar from "../../component/global-component/navbar";
+import Page_header from "../../component/global-component/page-header";
+import WhyChooseUs from "../../component/section-component/why-choose-us";
 import Featured from "../../components/featured/Featured";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
-import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
 import "./home.css";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import MailList2 from "../../components/mailList2/MailList2";
 
-const Home = () => {
+const Home = ({ type }) => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#F6F7FB" }}>
       <Navbar />
-      <Header/>
+      <Page_header headertitle="home" className="ona" />
+
+      <WhyChooseUs />
+      <MailList />
       <div className="homeContainer">
-        <Featured/>
-        <h1 className="homeTitle">Browse by property type</h1>
-        <PropertyList/>
-        <h1 className="homeTitle">Homes guests love</h1>
-        <FeaturedProperties/>
-        <MailList/>
-        <Footer/>
+        <Featured />
+
+        <h6 style={{ textAlign: "center" }} className="ok">
+          Latest Properties
+        </h6>
+        <FeaturedProperties />
+        <MailList2 />
+        <Footer />
       </div>
     </div>
   );

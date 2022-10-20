@@ -19,6 +19,7 @@ const New = ({ inputs, title }) => {
     data.append("file", file);
     data.append("upload_preset", "upload");
     try {
+   
       const uploadRes = await axios.post(
         "https://api.cloudinary.com/v1_1/dftygokow/image/upload",
         data
@@ -30,14 +31,15 @@ const New = ({ inputs, title }) => {
         ...info,
         img: url,
       };
-
+     
       await axios.post("/auth/register", newUser);
+    
     } catch (err) {
-      console.log(err);
+     
     }
   };
 
-  console.log(info);
+ 
   return (
     <div className="new">
       <Sidebar />
@@ -83,6 +85,7 @@ const New = ({ inputs, title }) => {
                 </div>
               ))}
               <button onClick={handleClick}>Send</button>
+
             </form>
           </div>
         </div>

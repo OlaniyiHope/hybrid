@@ -44,20 +44,36 @@ export const hotelColumns = [
     width: 150,
   },
   {
-    field: "type",
-    headerName: "Type",
+    field: "address",
+    headerName: "Address",
     width: 100,
-  },
-  {
-    field: "title",
-    headerName: "Title",
-    width: 230,
   },
   {
     field: "city",
     headerName: "City",
     width: 100,
   },
+  {
+    field: "distance",
+    headerName: "Distance",
+    width: 100,
+  },
+  {
+    field: "detail",
+    headerName: "Details",
+    width: 100,
+  },
+  {
+    field: "desc",
+    headerName: "Description",
+    width: 100,
+  },
+  {
+    field: "cheapestPrice",
+    headerName: "Price",
+    width: 230,
+  },
+ 
 ];
 
 export const roomColumns = [

@@ -12,8 +12,7 @@ const NewHotel = () => {
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error } = useFetch("/rooms");
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -29,10 +28,13 @@ const NewHotel = () => {
   console.log(files)
 
   const handleClick = async (e) => {
+    
     e.preventDefault();
+    
     try {
       const list = await Promise.all(
         Object.values(files).map(async (file) => {
+          setLoading(true);
           const data = new FormData();
           data.append("file", file);
           data.append("upload_preset", "upload");
@@ -53,7 +55,9 @@ const NewHotel = () => {
       };
 
       await axios.post("/hotels", newhotel);
+      setLoading(false);
     } catch (err) {console.log(err)}
+    setLoading(false);
   };
   return (
     <div className="new">
@@ -107,20 +111,8 @@ const NewHotel = () => {
                   <option value={true}>Yes</option>
                 </select>
               </div>
-              <div className="selectRooms">
-                <label>Rooms</label>
-                <select id="rooms" multiple onChange={handleSelect}>
-                  {loading
-                    ? "loading"
-                    : data &&
-                      data.map((room) => (
-                        <option key={room._id} value={room._id}>
-                          {room.title}
-                        </option>
-                      ))}
-                </select>
-              </div>
-              <button onClick={handleClick}>Send</button>
+          
+               <button onClick={handleClick}>{loading ? <>Loading..</> : <>Send</>}</button>
             </form>
           </div>
         </div>

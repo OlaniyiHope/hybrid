@@ -3,6 +3,7 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import Edit from "./pages/edit/Edit"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
@@ -12,6 +13,9 @@ import { AuthContext } from "./context/AuthContext";
 import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
 import NewHotel from "./pages/newHotel/NewHotel";
 import NewRoom from "./pages/newRoom/NewRoom";
+import List2 from "./pages/list2/List2";
+import Single2 from "./pages/single2/Single2";
+import Edit2 from "./pages/edit2/Edit2";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -65,13 +69,21 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+                 <Route
+                path="edit"
+                element={
+                  <ProtectedRoute>
+                    <Edit inputs={userInputs} title="Edit User" />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
             <Route path="hotels">
               <Route
                 index
                 element={
                   <ProtectedRoute>
-                    <List columns={hotelColumns} />
+                    <List2 columns={hotelColumns} />
                   </ProtectedRoute>
                 }
               />
@@ -79,7 +91,7 @@ function App() {
                 path=":productId"
                 element={
                   <ProtectedRoute>
-                    <Single />
+                    <Single2 />
                   </ProtectedRoute>
                 }
               />
@@ -88,6 +100,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <NewHotel  />
+                  </ProtectedRoute>
+                }
+              />
+                  <Route
+                path="edithotel"
+                element={
+                  <ProtectedRoute>
+                    <Edit2 inputs={userInputs} title="Edit Hotel" />
                   </ProtectedRoute>
                 }
               />

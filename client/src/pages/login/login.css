@@ -1,5 +1,5 @@
 .login {
-  height: 100vh;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
 .lButton {
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
+  background-color: #008000;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -27,6 +27,14 @@
 }
 
 .lButton:disabled{
-  background-color: #0071c28c;
+  background-color: #008000;
   cursor: not-allowed;
+}
+.log{
+  text-align: center;
+   margin-top: 200px;
+}
+.log2{
+  text-align: center;
+   margin-top: 30px;
 }

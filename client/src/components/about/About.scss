@@ -1,0 +1,101 @@
+
+/*------------------------------------------------
+    ## Section title
+------------------------------------------------*/
+.section-title {
+  margin-bottom: 45px;
+  position: relative; }
+  .section-title h1 img,
+  .section-title h2 img,
+  .section-title h3 img,
+  .section-title h4 img,
+  .section-title h5 img {
+    margin-right: 15px;
+    margin-top: -5px; }
+  .section-title .sub-title {
+    font-weight: 600;
+    font-family: var(--body-font);
+    margin-bottom: 20px;
+    color: var(--main-color-one); }
+  .section-title p {
+    padding-top: 8px; }
+  .section-title .btn-view-all {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-color-one);
+    text-decoration: underline;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -10px; }
+  .section-title .btn-view-all-2 {
+    font-weight: 600;
+    color: var(--main-color-one);
+    padding-right: 30px;
+    position: relative;
+    margin-top: 14px;
+    display: inline-block; }
+    .section-title .btn-view-all-2 i {
+      font-size: 28px;
+      position: absolute;
+      bottom: -2px;
+      right: -3px;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    .section-title .btn-view-all-2:hover i {
+      right: -7px; }
+  .section-title .floor-list {
+    margin-top: 33px; }
+  .section-title .btn {
+    margin-top: 22px; }
+  .section-title.pd-left {
+    padding-left: 100px; }
+
+.filter-title {
+  font-weight: 600;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  margin-bottom: 15px; }
+
+/*------------------------------------------------
+
+
+.rl----------
+    # Nav bar 
+
+/*----------------------------------------------
+    ## service-slider-2
+----------------------------------------------*/
+.service-area-about {
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 44% 100%; }
+
+.service-slider-2 .single-intro {
+  padding: 0 30px 35px 30px;
+  margin: 0 15px;
+  position: relative; }
+  .service-slider-2 .single-intro:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 29px;
+    bottom: 0;
+    width: 100%;
+    height: 88%;
+    -webkit-box-shadow: 0px 2px 12px #97A1B21A;
+    box-shadow: 0px 2px 12px #97A1B21A;
+    z-index: -1;
+    background: #fff; }
+  .service-slider-2 .single-intro .thumb {
+    height: 60px;
+    width: 60px;
+    line-height: 58px; }
+
+/*----------------------------------------------
+    ## news-details-author-social
+----------------------------------------------*/
+

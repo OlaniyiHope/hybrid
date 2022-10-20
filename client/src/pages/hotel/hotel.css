@@ -1,18 +1,11 @@
 .hotelContainer {
-  display: flex;
-  flex-direction: column;
+  
   align-items: center;
+  display: flex;
   margin-top: 20px;
 }
 
-.hotelWrapper {
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-}
+
 
 .bookNow {
   position: absolute;
@@ -39,7 +32,7 @@
 }
 
 .hotelDistance {
-  color: #0071c2;
+  color: #008009;
   font-weight: 500;
 }
 
@@ -59,9 +52,11 @@
 }
 
 .hotelImg {
-  width: 100%;
+
   object-fit: cover;
   cursor: pointer;
+width: 600px;
+ height: 400px;
 }
 
 .hotelDetails {
@@ -74,10 +69,18 @@
 .hotelDetailsTexts {
   flex: 3;
 }
-
-.hotelDesc {
-  font-size: 14px;
+.hey{
+  background-color: #008009;
+  color: #ebf3ff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.hot{
+  font-size: 16px;
   margin-top: 20px;
+  color: black;
+  width: 70%;
 }
 
 .hotelDetailsPrice {
@@ -108,7 +111,10 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
+.say{
+  font-weight: 700;
+  color: black;
+}
 .slider{
   position: sticky;
   top: 0;
@@ -149,3 +155,48 @@
   color: lightgray;
   cursor: pointer;
 }
+@media only screen and (max-width: 320px) {
+  .hotelContainer {
+  
+    align-items: center;
+    display: block;
+    margin-top: 20px;
+  }
+  .hotelImg {
+object-position: center;
+    object-fit: cover;
+    cursor: pointer;
+
+  margin: auto;
+
+  }
+  .hot{
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    width: 100%;
+  }
+  
+  }
+@media only screen and (max-width: 320px) {
+  .hotelContainer {
+  
+    align-items: center;
+    display: block;
+    margin-top: 20px;
+  }
+  .hotelImg {
+
+    cursor: pointer;
+
+  margin: auto;
+
+  }
+  .hot{
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    width: 100%;
+  }
+  
+  }

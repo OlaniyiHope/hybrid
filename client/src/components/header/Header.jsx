@@ -13,7 +13,7 @@ import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -64,24 +64,24 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>HOME</span>
+            <Link to="/" style={{textDecoration: "none"}}><span>HOME</span></Link>
           </div>
           <div className="headerListItem">
            
-           <span>ABOUT</span>
+          <Link to="/about" style={{textDecoration: "none"}}><span>ABOUT</span></Link>
          </div>
           <div className="headerListItem">
            
-            <span>BOOKINGS</span>
+          <Link to="/property" style={{textDecoration: "none"}}><span>PROPERTIES</span></Link>
           </div>
           <div className="headerListItem">
      
-            <span>CONTACT</span>
+          <Link to="/contact" style={{textDecoration: "none"}}><span style={{color: "white"}}>CONTACT</span></Link>
           </div>
           <div className="headerListItem">
-          
-            <span>HELP CENTER</span>
-          </div>
+     
+     <Link to="/info" style={{textDecoration: "none"}}><span style={{color: "white"}}>HELP CENTER</span></Link>
+     </div>
        
         </div>
         {type !== "list" && (

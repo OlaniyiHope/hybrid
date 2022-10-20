@@ -1,7 +1,10 @@
+
+
 .featured{
   width: 100%;
   max-width: 1024px;
   display: flex;
+  margin: auto;
   justify-content: space-between;
   gap: 20px;
   z-index: 1;
@@ -27,3 +30,40 @@
   bottom: 20px;
   left: 20px;
 }
+.bet{
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 320px) {
+  .featuredItem {
+   display: block; 
+   margin-top: 20px;
+  }
+  .featured{
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .bet {
+font-size: 18px;
+margin-bottom: 10px;
+
+  }
+  }
+  @media only screen and (max-width: 570px) {
+    .bet {
+      font-size: 20px;
+      margin-bottom: 10px;
+        }
+    .featuredItem {
+     display: block; 
+     margin-bottom: 20px;
+    }
+    .featured{
+      display: block;
+      width: 90%;
+      margin: auto;
+    }
+    
+    }
+   

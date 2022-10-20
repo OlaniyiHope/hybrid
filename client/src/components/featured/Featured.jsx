@@ -1,17 +1,26 @@
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
+import { Link } from "react-router-dom"
+import React, { Component } from 'react';
+import sectiondata from '../../data/sections.json';
+import parse from 'html-react-parser';
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
     "/hotels/countByCity?cities=berlin,madrid,london"
   );
 
+       
+  
   return (
+    <>
+     <h1 style={{textAlign: "center"}} className="bet">Beautiful places in Lagos</h1>
     <div className="featured">
       {loading ? (
         "Loading please wait"
       ) : (
         <>
+    
           <div className="featuredItem">
             <img
               src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
@@ -19,8 +28,8 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Lagos</h1>
-              <h2>{data[0]} properties</h2>
+              <h1>Banana Island</h1>
+              <h2> properties</h2>
             </div>
           </div>
 
@@ -31,8 +40,8 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Abuja</h1>
-              <h2>{data[1]} properties</h2>
+              <h1>Lekki</h1>
+              <h2>properties</h2>
             </div>
           </div>
           <div className="featuredItem">
@@ -42,13 +51,14 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>PortHarcourt</h1>
-              <h2>{data[2]} properties</h2>
+              <h1>Victoria Island</h1>
+              <h2> properties</h2>
             </div>
           </div>
         </>
       )}
     </div>
+    </>
   );
 };
 

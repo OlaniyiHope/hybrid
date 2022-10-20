@@ -1,0 +1,94 @@
+.mail {
+  width: 100%;
+  margin-top: 50px;
+  background-color: #008000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+}
+.mailTitle {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+
+  width: 100%;
+}
+.mailDesc {
+  font-size: 20px;
+}
+
+.mailInputContainer > button {
+  height: 40px;
+  background-color: #f00;
+  color: white;
+  font-weight: 500;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+@media only screen and (max-width: 570px) {
+  .mail {
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  .mailTitle {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+
+    display: block;
+    width: 100%;
+  }
+  .mailTitle h1 {
+    width: 100%;
+  }
+
+  .mailInputContainer > button {
+    height: 40px;
+    background-color: #f00;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 3px;
+    margin: auto;
+
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .mail {
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  .mailTitle {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+
+    display: block;
+    width: 100%;
+  }
+  .mailTitle h1 {
+    width: 100%;
+  }
+
+  .mailInputContainer > button {
+    height: 40px;
+    background-color: #f00;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 3px;
+    margin: auto;
+
+    cursor: pointer;
+  }
+}

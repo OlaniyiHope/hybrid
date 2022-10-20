@@ -14,7 +14,7 @@ const Home = () => {
         <Navbar />
        
        
-      <div>Welcome to Hybrids Home and properties Dashboard</div>
+      <div className="wel">Welcome to Hybrids Home and properties Dashboard</div>
       </div>
     </div>
   );
