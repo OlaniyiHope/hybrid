@@ -13,23 +13,23 @@ const FeaturedProperties = ({ item }) => {
           "Loading"
         ) : (
           <>
-            {data?.map((item) => (
-              <div className="fpItem" key={item._id}>
-                <Link to={`/hotels/${item._id}`}>
-                  <img src={item.photos[0]} alt="" className="fpImg" />
+            {data?.map((data) => (
+              <div className="fpItem" key={data?._id}>
+                <Link to={`/hotels/${data?._id}`}>
+                  <img src={data.photos[0]} alt="" className="fpImg" />
                 </Link>
                 <div className="fpTitle">
-                  <span className="fpName">{item.name}</span>
+                  <span className="fpName">{data?.name}</span>
                   <br></br>
                   <span className="fpCity">
                     <bold>
                       <FontAwesomeIcon icon={faLocationDot} />
-                      {item.city}
+                      {data?.city}
                     </bold>{" "}
                   </span>
                   <br></br>
                   <span className="fpPrice">
-                    <bold>Price: N{item.cheapestPrice}</bold>
+                    <bold>Price: N{data?.cheapestPrice}</bold>
                   </span>
                   <br></br>
                 </div>
