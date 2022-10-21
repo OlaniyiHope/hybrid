@@ -3,9 +3,10 @@ import "./featuredProperties.css";
 import { Link } from "react-router-dom";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const FeaturedProperties = ({ list }) => {
+const FeaturedProperties = () => {
   const { data, loading, error } = useFetch("/hotels?featured=true");
   const handleSearch = () => {};
+
   return (
     <>
       <div className="fp">
@@ -16,7 +17,7 @@ const FeaturedProperties = ({ list }) => {
             {data.map((data) => (
               <div className="fpItem" key={data?._id}>
                 <Link to={`/hotels/${data?._id}`}>
-                  <img src={data.photos[0]} alt="" className="fpImg" />
+                  <img src={data?.photos[0]} alt="" className="fpImg" />
                 </Link>
                 <div className="fpTitle">
                   <span className="fpName">{data?.name}</span>
