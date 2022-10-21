@@ -3,7 +3,7 @@ import "./featuredProperties.css";
 import { Link } from "react-router-dom";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const FeaturedProperties = ({ item }) => {
+const FeaturedProperties = ({ data }) => {
   const { data, loading, error } = useFetch("/hotels?featured=true");
   const handleSearch = () => {};
   return (
