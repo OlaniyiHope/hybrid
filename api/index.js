@@ -7,6 +7,7 @@ import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import "uuid";
 
 const app = express();
 dotenv.config();
@@ -25,8 +26,8 @@ mongoose.connection.on("disconnected", () => {
 });
 
 //middlewares
-app.use(cors())
-app.use(cookieParser())
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
@@ -43,6 +44,18 @@ app.use((err, req, res, next) => {
     message: errorMessage,
     stack: err.stack,
   });
+});
+
+app.get("/api", (req, res) => {
+  const path = `/api/item/${v4()}`;
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+});
+
+app.get("/api/item/:slug", (req, res) => {
+  const { slug } = req.params;
+  res.end(`Item: ${slug}`);
 });
 
 app.listen(8800, () => {
