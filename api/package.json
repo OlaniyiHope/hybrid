@@ -1,5 +1,4 @@
 {
-  "proxy": "hybrid-apis.vercel.app/api",
   "name": "hybridhome",
   "version": "1.0.0",
   "description": "",
