@@ -186,7 +186,7 @@ object-position: center;
     margin-top: 20px;
   }
   .hotelImg {
-
+width: 90%;
     cursor: pointer;
 
   margin: auto;

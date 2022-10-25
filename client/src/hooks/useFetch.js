@@ -11,9 +11,11 @@ const useFetch = (url) => {
       setLoading(true);
       try {
         const res = await axios.get(url);
-        setData(res.data);
+        //setData(res.data);
+        if (res.data) setData(res.data);
       } catch (err) {
         setError(err);
+        console.log(err?.response);
       }
       setLoading(false);
     };
@@ -24,9 +26,11 @@ const useFetch = (url) => {
     setLoading(true);
     try {
       const res = await axios.get(url);
-      setData(res.data);
+      //setData(res.data);
+      if (res.data) setData(res.data);
     } catch (err) {
       setError(err);
+      console.log(err?.response);
     }
     setLoading(false);
   };
