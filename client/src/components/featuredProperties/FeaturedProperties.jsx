@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("hotels?featured=true");
+  const { data, loading, error } = useFetch("api/hotels?featured=true");
 
   const handleSearch = () => {};
 
