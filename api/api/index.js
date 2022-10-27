@@ -16,7 +16,7 @@ const connect = async () => {
     await mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB.");
   } catch (error) {
-    throw error;
+    console.log("Connected to vercel.");
   }
 };
 
@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(`https://hybrid-apis.vercel.app/`, () => {
+app.listen(8800, () => {
   connect();
   console.log("Connected to backend.");
 });
