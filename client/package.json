@@ -1,5 +1,4 @@
 {
-  "proxy": "https://hybrid-apis.vercel.app/api",
   "name": "booking",
   "version": "0.1.0",
   "private": true,
