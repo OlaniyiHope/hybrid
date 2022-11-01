@@ -1,7 +1,7 @@
-import "./register.scss"
+import "./register.scss";
 import { useState } from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Register = ({ inputs, title }) => {
   const [file, setFile] = useState("");
@@ -30,21 +30,19 @@ const Register = ({ inputs, title }) => {
         img: url,
       };
 
-      await axios.post("/auth/register", newUser);
-      navigate("/login")
-    } catch (err) {
-    
-    }
+      await axios.post(
+        "https://hybridhome-api.herokuapp.com/api/auth/register",
+        newUser
+      );
+      navigate("/login");
+    } catch (err) {}
   };
 
- 
   return (
     <div className="new">
-     
       <div className="newContainer">
-    
         <div className="top">
-          <h1 style={{color: "#000"}}>Become a member of Hybrid Homes</h1>
+          <h1 style={{ color: "#000" }}>Become a member of Hybrid Homes</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -60,9 +58,7 @@ const Register = ({ inputs, title }) => {
           <div className="right">
             <form>
               <div className="formInput">
-                <label htmlFor="file">
-                  Click here to add Image 
-                </label>
+                <label htmlFor="file">Click here to add Image</label>
                 <input
                   type="file"
                   id="file"
@@ -70,54 +66,54 @@ const Register = ({ inputs, title }) => {
                   style={{ display: "none" }}
                 />
               </div>
-             
+
               <input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={handleChange}
-          className="lInput"
-        />
-       
-        <input
-          type="email"
-          placeholder="Email"
-          id="email"
-          onChange={handleChange}
-          className="lInput"
-        />
-     
-        <input
-          type="text"
-          placeholder="Country"
-          id="country"
-          onChange={handleChange}
-          className="lInput"
-        />
-       
-        <input
-          type="text"
-          placeholder="City"
-          id="city"
-          onChange={handleChange}
-          className="lInput"
-        />
-       
-        <input
-          type="text"
-          placeholder="Phone Number"
-          id="phone"
-          onChange={handleChange}
-          className="lInput"
-        />
-      
-          <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          onChange={handleChange}
-          className="lInput"
-        />
+                type="text"
+                placeholder="username"
+                id="username"
+                onChange={handleChange}
+                className="lInput"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                onChange={handleChange}
+                className="lInput"
+              />
+
+              <input
+                type="text"
+                placeholder="Country"
+                id="country"
+                onChange={handleChange}
+                className="lInput"
+              />
+
+              <input
+                type="text"
+                placeholder="City"
+                id="city"
+                onChange={handleChange}
+                className="lInput"
+              />
+
+              <input
+                type="text"
+                placeholder="Phone Number"
+                id="phone"
+                onChange={handleChange}
+                className="lInput"
+              />
+
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                onChange={handleChange}
+                className="lInput"
+              />
               <button onClick={handleClick}>Send</button>
             </form>
           </div>

@@ -22,7 +22,10 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post(
+        "https://hybridhome-api.herokuapp.com/api/auth/login",
+        credentials
+      );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/");
     } catch (err) {
@@ -32,7 +35,7 @@ const Login = () => {
 
   return (
     <>
-      <h3 className="log">Login to Hybrid Homes</h3>
+      <h3 className="log">Login to Hybrid Home</h3>
       <div className="login">
         <div className="lContainer">
           <input

@@ -1,5 +1,4 @@
 {
-  "proxy": "https://hybridhome-api.herokuapp.com/api",
   "name": "lamadmin",
   "version": "0.1.0",
   "private": true,
@@ -34,10 +33,6 @@
       "react-app",
       "react-app/jest"
     ]
-  },
-  "engines": {
-    "node": "16.17.1",
-    "npm": "8.15.0"
   },
   "browserslist": {
     "production": [
