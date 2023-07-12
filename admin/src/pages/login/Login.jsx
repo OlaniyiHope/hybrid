@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 // import { AuthContext } from "../../context/AuthContext";
-import "./login.scss";
+import "./login.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -43,28 +43,31 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="lContainer">
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
-        </button>
-        {error && <span>{error.message}</span>}
+    <>
+      <h3 className="log">Hybrid Homes Admin</h3>
+      <div className="login">
+        <div className="lContainer">
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            onChange={handleChange}
+            className="lInput"
+          />
+          <button disabled={loading} onClick={handleClick} className="lButton">
+            Login
+          </button>
+          {error && <span>{error.message}</span>}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

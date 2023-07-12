@@ -77,7 +77,6 @@
   }
 }
 .login {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,9 +88,10 @@
   gap: 10px;
 }
 
-.lInput{
+.lInput {
   height: 30px;
   padding: 10px;
+  margin-bottom: 5px;
 }
 
 .lButton {
@@ -104,15 +104,15 @@
   border-radius: 5px;
 }
 
-.lButton:disabled{
-  background-color: #0071c28c;
+.lButton:disabled {
+  background-color: #008000;
   cursor: not-allowed;
 }
-.log{
+.log {
   text-align: center;
-   margin-top: 200px;
+  margin-top: 200px;
 }
-.log2{
+.log2 {
   text-align: center;
-   margin-top: 30px;
+  margin-top: 30px;
 }

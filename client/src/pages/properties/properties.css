@@ -1,0 +1,207 @@
+.propertiesContainer {
+  align-items: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.bookNow {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.propertiesTitle {
+  font-size: 24px;
+}
+
+.propertiesAddress {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.propertiesDistance {
+  color: #008009;
+  font-weight: 500;
+}
+
+.propertiesPriceHighlight {
+  color: #008009;
+  font-weight: 500;
+}
+
+.propertiesImages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.propertiesImgWrapper {
+  width: 33%;
+}
+
+.propertiesImg {
+  object-fit: cover;
+  cursor: pointer;
+  width: 800px;
+  height: 460px;
+}
+
+.propertiesDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.propertiesDetailsTexts {
+  flex: 3;
+}
+.hey {
+  background-color: #008009;
+  color: #ebf3ff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.hot {
+  font-size: 16px;
+  margin-top: 20px;
+  color: black;
+  width: 70%;
+}
+
+.propertiesDetailsPrice {
+  flex: 1;
+  background-color: #ebf3ff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.propertiesDetailsPrice > h1 {
+  font-size: 18px;
+  color: #555;
+}
+.propertiesDetailsPrice > span {
+  font-size: 14px;
+}
+.propertiesDetailsPrice > h2 {
+  font-weight: 300;
+}
+.propertiesDetailsPrice > button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.say {
+  font-weight: 700;
+  color: black;
+}
+.slider {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.613);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderImg {
+  width: 80%;
+  height: 80vh;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: lightgray;
+  cursor: pointer;
+}
+
+.arrow {
+  margin: 20px;
+  font-size: 50px;
+  color: lightgray;
+  cursor: pointer;
+}
+@media only screen and (max-width: 320px) {
+  .propertiesContainer {
+    align-items: center;
+    display: block;
+    margin-top: 20px;
+  }
+  .propertiesImg {
+    object-position: center;
+    object-fit: cover;
+    cursor: pointer;
+
+    margin: auto;
+  }
+  .hot {
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .propertiesContainer {
+    align-items: center;
+    display: block;
+    margin-top: 20px;
+  }
+  .propertiesImg {
+    max-width: 99%;
+    cursor: pointer;
+  }
+  .hot {
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .propertiesContainer {
+    align-items: center;
+    display: block;
+    margin-top: 20px;
+  }
+  .propertiesImg {
+    max-width: 99%;
+    cursor: pointer;
+  }
+  .hot {
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    width: 100%;
+  }
+}

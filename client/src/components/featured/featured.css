@@ -18,15 +18,46 @@
 }
 
 .featuredImg {
-  width: 100%;
-  height: 100%;
+  background-image: url("../../../public/assets/img/gg.jpg");
   object-fit: cover;
+  height: "200px";
+  width: "100%";
 }
-
+.featuredImg2 {
+  background-image: url("../../../public/assets/img/ggg.jpg");
+  object-fit: cover;
+  height: "200px";
+  width: "100%";
+}
+.hii {
+  background-image: url("./yo.jpeg");
+  height: "200px";
+  width: "100%";
+}
+.featuredImg3 {
+  background-image: url("../../../public/assets/img/yo.jpeg");
+  object-fit: cover;
+  height: "200px";
+  width: "100%";
+}
+.featuredImg4 {
+  background-image: url("../../../public/assets/img/q3.jpg");
+  object-fit: cover;
+  height: "200px";
+  width: "100%";
+}
 .featuredTitles {
   position: absolute;
   bottom: 20px;
   left: 20px;
+}
+.featuredTitles h2 {
+  color: white;
+  font-weight: 700;
+}
+.featuredTitles h1 {
+  color: white;
+  font-weight: 700;
 }
 .bet {
   font-size: 30px;

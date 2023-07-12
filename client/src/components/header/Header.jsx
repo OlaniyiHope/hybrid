@@ -37,7 +37,6 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -51,7 +50,7 @@ const Header = ({ type }) => {
 
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
-    navigate("/hotels", { state: { destination, dates, options } });
+    navigate("/properties", { state: { destination, dates, options } });
   };
 
   return (
@@ -64,25 +63,30 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <Link to="/" style={{textDecoration: "none"}}><span>HOME</span></Link>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <span>HOME</span>
+            </Link>
           </div>
           <div className="headerListItem">
-           
-          <Link to="/about" style={{textDecoration: "none"}}><span>ABOUT</span></Link>
-         </div>
-          <div className="headerListItem">
-           
-          <Link to="/property" style={{textDecoration: "none"}}><span>PROPERTIES</span></Link>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              <span>ABOUT</span>
+            </Link>
           </div>
           <div className="headerListItem">
-     
-          <Link to="/contact" style={{textDecoration: "none"}}><span style={{color: "white"}}>CONTACT</span></Link>
+            <Link to="/property" style={{ textDecoration: "none" }}>
+              <span>PROPERTIES</span>
+            </Link>
           </div>
           <div className="headerListItem">
-     
-     <Link to="/info" style={{textDecoration: "none"}}><span style={{color: "white"}}>HELP CENTER</span></Link>
-     </div>
-       
+            <Link to="/contact" style={{ textDecoration: "none" }}>
+              <span style={{ color: "white" }}>CONTACT</span>
+            </Link>
+          </div>
+          <div className="headerListItem">
+            <Link to="/info" style={{ textDecoration: "none" }}>
+              <span style={{ color: "white" }}>HELP CENTER</span>
+            </Link>
+          </div>
         </div>
         {type !== "list" && (
           <>
@@ -90,7 +94,8 @@ const Header = ({ type }) => {
               We help you get the property you need
             </h1>
             <p className="headerDesc">
-              Get the best properties in Nigeria from us and call us back for another one
+              Get the best properties in Nigeria from us and call us back for
+              another one
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">

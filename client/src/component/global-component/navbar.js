@@ -1,7 +1,7 @@
 import React, { Component, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-
+import logo from "./hy.png";
 const Navbar = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imgattr = "logo";
@@ -33,13 +33,15 @@ const Navbar = () => {
               </button>
             </div>
             <div className="logo readeal-top">
-              <Link to="/">
-                <img
-                  src="../hy.png"
-                  style={{ width: "130px", height: "60px" }}
-                  alt="logo"
-                />
-              </Link>
+              <a to="/">
+                <Link to="/">
+                  <img
+                    src={logo}
+                    style={{ width: "100px", height: "50px" }}
+                    alt="logo"
+                  />
+                </Link>
+              </a>
             </div>
             <div className="nav-right-part nav-right-part-mobile"></div>
             <div className="collapse navbar-collapse" id="realdeal_main_menu">
@@ -72,12 +74,12 @@ const Navbar = () => {
                     ) : (
                       <div className="navItems">
                         <li className="navButton">
-                          <Link to="register" style={{ color: "#008000" }}>
+                          <Link to="/register" style={{ color: "#008000" }}>
                             Register
                           </Link>
                         </li>
                         <li className="navButton">
-                          <Link to="login" style={{ color: "#008000" }}>
+                          <Link to="/login" style={{ color: "#008000" }}>
                             {" "}
                             Login
                           </Link>{" "}

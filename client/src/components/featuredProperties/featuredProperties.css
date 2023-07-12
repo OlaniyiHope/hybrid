@@ -11,28 +11,40 @@
 
 .fpItem {
   position: relative;
-  color: white;
-  border-radius: 5px;
+
+  border-radius: 10px;
   overflow: hidden;
-  height: 250px;
-  display: flex;
-  margin-bottom: 20px;
+
+  margin-bottom: 30px;
 }
 
 .fpImg {
-  background-color: #003580;
-  opacity: 0.77;
+  background-color: #eddfdf;
+  height: 250px;
   width: 100%;
-  filter: brightness(50%);
 }
-
+.fpName {
+  font-size: 16px;
+  color: var(--main-color-one);
+}
+.fpCity {
+  font-size: 14px;
+  color: black;
+}
+.fpPrice {
+  font-size: 16px;
+  color: black;
+}
 .fpTitle {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-weight: 900;
+  background: #f6f6f6;
+  padding: 20px 20px;
+  position: relative;
 }
-
+.fpItem .fpTitle .fpName {
+  padding-left: 1px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
 .fpRating > button {
   background-color: #003580;
   color: white;

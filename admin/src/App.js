@@ -3,15 +3,15 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
-import Edit from "./pages/edit/Edit"
+import Edit from "./pages/edit/Edit";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
-import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
-import NewHotel from "./pages/newHotel/NewHotel";
+import { propertiesColumns, roomColumns, userColumns } from "./datatablesource";
+import NewProperties from "./pages/newproperties/NewProperties";
 import NewRoom from "./pages/newRoom/NewRoom";
 import List2 from "./pages/list2/List2";
 import Single2 from "./pages/single2/Single2";
@@ -69,7 +69,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-                 <Route
+              <Route
                 path="edit"
                 element={
                   <ProtectedRoute>
@@ -78,12 +78,12 @@ function App() {
                 }
               />
             </Route>
-            <Route path="hotels">
+            <Route path="properties">
               <Route
                 index
                 element={
                   <ProtectedRoute>
-                    <List2 columns={hotelColumns} />
+                    <List2 columns={propertiesColumns} />
                   </ProtectedRoute>
                 }
               />
@@ -99,15 +99,15 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewHotel  />
+                    <NewProperties />
                   </ProtectedRoute>
                 }
               />
-                  <Route
-                path="edithotel"
+              <Route
+                path="editproperties"
                 element={
                   <ProtectedRoute>
-                    <Edit2 inputs={userInputs} title="Edit Hotel" />
+                    <Edit2 inputs={userInputs} title="Edit Property" />
                   </ProtectedRoute>
                 }
               />
@@ -133,7 +133,7 @@ function App() {
                 path="new"
                 element={
                   <ProtectedRoute>
-                    <NewRoom  />
+                    <NewRoom />
                   </ProtectedRoute>
                 }
               />

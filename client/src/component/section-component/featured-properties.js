@@ -1,75 +1,81 @@
-import React, { Component } from 'react';
-import sectiondata from '../../data/sections.json';
-import parse from 'html-react-parser';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import sectiondata from "../../data/sections.json";
+import parse from "html-react-parser";
+import { Link } from "react-router-dom";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import "react-slideshow-image/dist/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useFetch from "../../hooks/useFetch";
+const Featureds = () => {
+  const { data, loading, error } = useFetch("/properties?featured=true");
+  const spanStyle = {
+    padding: "20px",
+    background: "#efefef",
+    color: "#000000",
+  };
 
-class Featured extends Component {
+  const divStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundSize: "cover",
+    height: "400px",
+  };
+  return (
+    <div className="properties-area ">
+      <div className="container">
+        <div className="section-title">
+          <h2 className="title">{data.title}</h2>
+        </div>
 
-
-    render() {
-
-        let publicUrl = process.env.PUBLIC_URL+'/'
-        let imagealt = 'image'
-        let data = sectiondata.featuredproperties
-        let Customclass = this.props.Customclass ? this.props.Customclass : 'pd-top-60'
-
-
-    return <div className={"featured-area  "+Customclass}>
-          <div className="container">
-            <div className="section-title text-center">
-              <h2 className="title">{ data.title }</h2>
-            </div>
-            <div className="row justify-content-center">
-              <div className="col-xl-6 col-lg-8">
-                <div className="single-leading-feature">
-                  <div className="slf-overlay" />
+        <div className="row">
+          {data &&
+            data.map((item) => (
+              <div key={item?._id} className="col-lg-3 col-sm-6">
+                <div className="single-feature">
                   <div className="thumb">
-                    <img src={publicUrl+data.firstitem.image} alt={ imagealt } />
+                    <Link to={`/properties/${item?._id}`}>
+                      <span style={spanStyle}></span>
+                    </Link>
                   </div>
+                  <Link to={`/properties/${item?._id}`}>
+                    <img
+                      src={item?.photos[0]}
+                      alt=""
+                      style={{ height: "200px", width: "100%" }}
+                    />
+                  </Link>
                   <div className="details">
-                    <h4 className="title readeal-top"><Link to={ data.firstitem.url  }>{ data.firstitem.title }</Link></h4>
-                    <h5 className="price">{ data.firstitem.price }</h5>
-                    <span>{ data.firstitem.content }</span>
+                    <h6 className="title readeal-top">
+                      <Link to="">{item?.name}</Link>
+                    </h6>
+                    <p className="author">
+                      <FontAwesomeIcon icon={faLocationDot} /> {item?.city}
+                    </p>
+
+                    <h6 className="price">₦{item?.cheapestPrice}</h6>
+
+                    <ul className="info-list"></ul>
+                    <ul className="contact-list">
+                      <li></li>
+
+                      <li className="readeal-top">
+                        <Link
+                          className="btn btn-yellow"
+                          to={`/properties/${item?._id}`}
+                        >
+                          View Details
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              { data.items.map( ( item, i )=>
-                  <div key={ i } className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                    <div className="single-feature">
-                      <div className="thumb">
-                        <img src={ publicUrl+item.image } alt={ imagealt } />
-                      </div>
-                      <div className="details">
-                        <a href="#" className="feature-logo">
-                          <img src={publicUrl+item.icon} alt={ imagealt } />
-                        </a>
-                        <p className="author"><i className="fa fa-user" /> { item.authorname }</p>
-                        <h6 className="title readeal-top"><Link to={ item.url }>{ item.title }</Link></h6>
-                        <h6 className="price">{ item.newerprice }</h6><del>{ item.olderprice }</del>
-                        <ul className="info-list">
-
-                        { item.features.map( ( features, i )=>
-                          <li key={ i } ><i className={ features.icon } /> { features.title }</li>
-                         ) }  
-                          <li><img src={publicUrl+"/assets/img/icons/7.png"} alt="img" /> { item.area }</li>
-                        </ul>
-                        <ul className="contact-list">
-                          <li><a className="phone" href="#"><i className="fa fa-phone" /></a></li>
-                          <li><a className="message" href="#"><img src={ publicUrl+"/assets/img/icons/8.png" } alt="img" /></a></li>
-                          <li className="readeal-top"><Link className="btn btn-yellow" to={item.url}>View Details</Link></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-               ) }
-              
-            </div>
-          </div>
+            ))}
         </div>
+      </div>
+    </div>
+  );
+};
 
-
-
-        }
-}
-
-export default Featured
+export default Featureds;

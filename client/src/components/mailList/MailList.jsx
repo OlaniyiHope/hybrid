@@ -1,16 +1,21 @@
-import "./mailList.css"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 const MailList = () => {
   return (
-    <div className="mail">
-      <h1 className="mailTitle">Hybrid Home! The largest real estate company</h1>
-      <span className="mailDesc">Begin your journey to become a property owner today</span>
-      <div className="mailInputContainer">
-       
-        <button><Link to="/contact" style={{color: "#fff" }}> Contact Us</Link></button>
+    <div className="call-to-action-area pd-top-20">
+      <div className="container">
+        <div className="call-to-action">
+          <div className="cta-content">
+            <h3 className="title">
+              Begin your journey to become a property owner today
+            </h3>
+            <Link className="btn btn-white" to="/contact">
+              Contact Us
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MailList
+export default MailList;

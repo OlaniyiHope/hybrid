@@ -1,0 +1,89 @@
+.fp {
+  width: 90%;
+  margin: auto;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 20px;
+  height: auto;
+}
+
+.fpItem {
+  position: relative;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  margin-bottom: 30px;
+}
+
+.fpImg {
+  background-color: #eddfdf;
+  height: 250px;
+  width: 100%;
+}
+.fpName {
+  font-size: 16px;
+  color: var(--main-color-one);
+}
+.fpCity {
+  font-size: 14px;
+  color: black;
+}
+.fpPrice {
+  font-size: 16px;
+  color: black;
+}
+.fpTitle {
+  background: #f6f6f6;
+  padding: 20px 20px;
+  position: relative;
+}
+.fpItem .fpTitle .fpName {
+  padding-left: 1px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.fpRating > button {
+  background-color: #003580;
+  color: white;
+  border: none;
+  padding: 3px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.fpRating > span {
+  font-size: 14px;
+}
+@media only screen and (max-width: 320px) {
+  .fp {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .fpitem {
+    display: block;
+    width: 90%;
+  }
+  .bet {
+    font-size: 22px;
+    margin-bottom: 120px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .fp {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .fpitem {
+    display: block;
+    width: 90%;
+  }
+  .bet {
+    font-size: 22px;
+    margin-bottom: 120px;
+  }
+}
